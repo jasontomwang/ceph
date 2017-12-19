@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    name: ubuntu system setup for deployment ceph
+    tasks:
+       - name: 关闭系统防火墙
+         shell: systemctl stop firewalld && systemclt disable firewalld
+       - name: 设置服务器时间
+         shell: timedataectl set-timezone Asia/Shanghai
+       - name: 备份yum源
+         shell: mkdir -p /etc/yum.repos.d/bak && mv /etc/yum.repos.d/* /etc/yum.repos.d/bak
+       - name: 设置yum源
+         file: 
+           src: files/aliyun.repo
+           dest: /etc/yum.repos.d/aliyun.repo
