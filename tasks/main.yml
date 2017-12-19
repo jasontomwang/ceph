@@ -1,0 +1,4 @@
+- include dephost
+- include mon
+- include osd
+- include client
