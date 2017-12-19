@@ -1,0 +1,4 @@
+---
+  - name: ceph mon主机安装设置 
+    hosts: mon
+    tasks:
