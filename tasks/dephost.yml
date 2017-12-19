@@ -12,3 +12,6 @@
          file: 
            src: files/aliyun.repo
            dest: /etc/yum.repos.d/aliyun.repo
+       - name: 安装CEPH-DEPLOY
+         yum: name=ceph-deploy state=present
+         
